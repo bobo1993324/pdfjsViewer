@@ -1,0 +1,15 @@
+{
+    "name": "com.ubuntu.developer.username.pdfjsviewer",
+    "description": "description of pdfjsViewer",
+    "framework": "ubuntu-sdk-14.04-qml-dev1",
+    "architecture": "all",
+    "title": "pdfjsViewer",
+    "hooks": {
+        "pdfjsViewer": {
+            "apparmor": "pdfjsViewer.json",
+            "desktop": "pdfjsViewer.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": ""
+}
