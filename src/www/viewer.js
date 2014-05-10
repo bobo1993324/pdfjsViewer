@@ -311,7 +311,7 @@ var DEFAULT_PREFERENCES = {
   showPreviousViewOnLoad: true,
   defaultZoomValue: '',
   sidebarViewOnLoad: 0,
-  enableHandToolOnLoad: true,
+  enableHandToolOnLoad: false, //setting it to true doesn't work
   enableWebGL: false
 };
 
@@ -2314,6 +2314,8 @@ var HandTool = {
         }
       }
     });
+      //added to activate handtool at start
+      this.handTool.activate();
     if (toggleHandTool) {
       toggleHandTool.addEventListener('click', this.toggle.bind(this), false);
 
