@@ -13,6 +13,11 @@ Item {
             url: Qt.resolvedUrl("../www/viewer.html")
             //            experimental.preferences.developerExtrasEnabled: true
             preferences.allowUniversalAccessFromFileUrls: true
+            filePicker: filePickerLoader.item
+            Loader {
+                id: filePickerLoader
+                source: /*formFactor == "desktop" ? "FilePickerDialog.qml" : */ "ContentPickerDialog.qml"
+            }
 //            experimental {
 //                alertDialog: Component { Label { text: model.message
 //                        Component.onCompleted: {
