@@ -2186,7 +2186,6 @@ var GrabToPan = (function GrabToPanClosure() {
      * @private
      */
     _onmousedown: function GrabToPan__onmousedown(event) {
-        alert("_onmouseDown");
       if (event.button !== 0 || this.ignoreTarget(event.target)) {
         return;
       }
@@ -2204,8 +2203,6 @@ var GrabToPan = (function GrabToPanClosure() {
       this.scrollTopStart = this.element.scrollTop;
       this.clientXStart = event.clientX;
       this.clientYStart = event.clientY;
-
-      alert('add mousemove');
       this.document.addEventListener('mousemove', this._onmousemove, true);
       this.document.addEventListener('mouseup', this._endPan, true);
       // When a scroll event occurs before a mousemove, assume that the user
@@ -2221,7 +2218,6 @@ var GrabToPan = (function GrabToPanClosure() {
      * @private
      */
     _onmousemove: function GrabToPan__onmousemove(event) {
-        alert("mousemove")
       this.element.removeEventListener('scroll', this._endPan, true);
       if (isLeftMouseReleased(event)) {
         this._endPan();
