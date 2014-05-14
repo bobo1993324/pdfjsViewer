@@ -3,6 +3,8 @@
 #include <QQmlContext>
 class FileModel : public QObject {
     Q_OBJECT
+    Q_PROPERTY(QStringList files READ files)
 public:
-    Q_INVOKABLE QByteArray readFile(QString path);
+    QStringList files();
+    Q_INVOKABLE bool link(QString fileName);
 };
