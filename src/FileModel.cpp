@@ -21,15 +21,3 @@ QStringList FileModel::files() {
         return qsl;
     }
 }
-
-bool FileModel::link(QString fileName) {
-    //remove former link
-    QFile fOld(QDir::homePath() + "/.local/share/com.ubuntu.developer.bobo1993324.pdfjsviewer/tmp.pdf");
-    if (fOld.exists()) {
-        qDebug() << "removing old file";
-        fOld.remove();
-    }
-    QFile f(QDir::homePath() + "/.local/share/com.ubuntu.developer.bobo1993324.pdfjsviewer/Documents/" + fileName);
-    Q_ASSERT(f.exists());
-    return f.link(QDir::homePath() + "/.local/share/com.ubuntu.developer.bobo1993324.pdfjsviewer/tmp.pdf");
-}

@@ -22,9 +22,8 @@ MainView {
                 delegate: ListItems.Standard {
                     text: model.modelData
                     onClicked: {
-                        console.log("file link success? " + fileModel.link(model.modelData))
+                        readPage.fileName = model.modelData;
                         pageStack.push(readPage)
-                        readPage.reload()
                     }
                 }
             }

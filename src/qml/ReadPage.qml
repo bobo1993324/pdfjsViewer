@@ -3,14 +3,14 @@ import Ubuntu.Components 0.1
 import com.canonical.Oxide 1.0
 
 Page {
-    function reload() {
-        webview.reload();
-    }
-
+    property string baseUrl: "../www/viewer.html?file=file:///home/luke/.local/share/com.ubuntu.developer.bobo1993324.pdfjsviewer/Documents/"
+    property string fileName
+//    function reload
     WebView {
         id: webview
         anchors.fill: parent
-        url: Qt.resolvedUrl("../www/viewer.html")
+        url: Qt.resolvedUrl(baseUrl + fileName);
+//        url: Qt.resolvedUrl("../www/viewer.html")
         preferences.allowUniversalAccessFromFileUrls: true
 //        url: "http://www.ubuntu.com"
         //            filePicker: filePickerLoader.item
@@ -19,13 +19,13 @@ Page {
         //                source: /*formFactor == "desktop" ? "FilePickerDialog.qml" : */ "ContentPickerDialog.qml"
         //            }
         //            experimental {
-        //                alertDialog: Component { Label { text: model.message
-        //                        Component.onCompleted: {
-        //                            console.log(model.message);
-        //                            model.dismiss();
-        //                        }
-        //                    }
-        //                }
+//                        alertDialog: Component { Label { text: model.message
+//                                Component.onCompleted: {
+//                                    console.log(model.message);
+//                                    model.dismiss();
+//                                }
+//                            }
+//                        }
 
         //                //                urlSchemeDelegates: [
         //                //                    UrlSchemeDelegate {

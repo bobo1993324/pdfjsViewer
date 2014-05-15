@@ -6,5 +6,4 @@ class FileModel : public QObject {
     Q_PROPERTY(QStringList files READ files)
 public:
     QStringList files();
-    Q_INVOKABLE bool link(QString fileName);
 };
