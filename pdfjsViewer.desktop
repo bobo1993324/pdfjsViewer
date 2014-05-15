@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=qmlTextReader
+Exec=./pdfjsViewer 
+Icon=./logo.png
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
