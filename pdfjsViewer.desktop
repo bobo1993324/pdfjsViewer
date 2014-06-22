@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=qmlTextReader
-Exec=./pdfjsViewer 
+Exec=qmlscene qml/main.qml
 Icon=./logo.png
 Terminal=false
 Type=Application

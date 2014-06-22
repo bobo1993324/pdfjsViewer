@@ -2,7 +2,7 @@
     "name": "com.ubuntu.developer.bobo1993324.pdfjsviewer",
     "description": "A simple PDF viewer built on pdf.js",
     "framework": "ubuntu-sdk-14.04-qml-dev1",
-    "architecture": "armhf",
+    "architecture": "all",
     "title": "pdfjsViewer",
     "hooks": {
         "pdfjsViewer": {
