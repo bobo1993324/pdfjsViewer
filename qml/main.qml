@@ -5,6 +5,7 @@ MainView {
     applicationName: "com.ubuntu.developer.bobo1993324.pdfjsviewer"
     width: units.gu(48)
     height: units.gu(72)
+    automaticOrientation: true
     ReadPage {
         id: readPage
     }
