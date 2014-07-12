@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=qmlTextReader
+Name=PdfjsViewer
 Exec=qmlscene qml/main.qml
 Icon=./logo.png
 Terminal=false
