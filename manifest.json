@@ -1,7 +1,7 @@
 {
     "name": "com.ubuntu.developer.bobo1993324.pdfjsviewer",
     "description": "A simple PDF viewer built on pdf.js",
-    "framework": "ubuntu-sdk-14.04-qml-dev1",
+    "framework": "ubuntu-sdk-14.10-qml-dev2",
     "architecture": "all",
     "title": "pdfjsViewer",
     "hooks": {
@@ -11,6 +11,6 @@
             "content-hub": "pdfjsViewer-contenthub.json"
         }
     },
-    "version": "0.1",
+    "version": "0.1.1",
     "maintainer": "Boren Zhang <bobo1993324@gmail.com>"
 }
