@@ -6,8 +6,10 @@ MainView {
     width: units.gu(48)
     height: units.gu(72)
     automaticOrientation: true
-    ReadPage {
-        id: readPage
+    PageStack {
+        Component.onCompleted: {
+            push(Qt.resolvedUrl("./ReadPage.qml"));
+        }
     }
     Connections {
         target: ContentHub
