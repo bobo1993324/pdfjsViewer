@@ -1,4 +1,18 @@
 $( document ).ready(function() {
+    function closeThumbView() {
+        $("#outerContainer").addClass('sidebarMoving');
+        $("#outerContainer").removeClass('sidebarOpen');
+        PDFView.sidebarOpen = false;
+        PDFView.renderHighestPriority();
+        
+        $("#main").width(document.body.scrollWidth);
+    }
+    
+    function showHeader() {
+        $("#headerID").animate({
+            top: '+=64px'
+        }, 100);
+    }
     $("#sidebarContainer").height(document.body.scrollHeight - 75);
     $("#navigation-button").click(function() {
         console.log("navigation button clicked.");
@@ -16,15 +30,22 @@ $( document ).ready(function() {
         PDFView.switchSidebarView('thumbs');
         $("#navigation-list").hide(100);
         
-        $("#main").width(document.body.scrollWidth - $("#sidebarContainer").width());
+        $("#main").width(document.body.scrollWidth - $("#sidebarContainer").width() + 4);
     });
     $("#close-sidebar-button").click(function() {
-        this.classList.toggle('toggled');
-        $("#outerContainer").addClass('sidebarMoving');
-        $("#outerContainer").removeClass('sidebarOpen');
-        PDFView.sidebarOpen = false;
-        PDFView.renderHighestPriority();
-        
-        $("#main").width(document.body.scrollWidth);
+        closeThumbView();
+    });
+    $("#main").click(function(){
+        if ($("#headerID").css('top').split("px")[0] < -30) {
+            showHeader();
+        } else {
+            closeThumbView();
+            $("#headerID").animate({
+                top: '-=64px'
+            }, 100);
+        }
+    });
+    $("#show-header-button").click(function(){
+        showHeader();
     });
 });

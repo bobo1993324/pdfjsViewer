@@ -24,6 +24,7 @@
 #headerID {
     position: relative;
     margin-bottom: -1px;
+    z-index: 10;
 }
 
 #navigation-list {
@@ -64,5 +65,17 @@
     right: 0px;
     width: 100%;
     bottom: 0px;
-    top: 74px;
+    top: 0px;
+}
+
+#show-header-button {
+   position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 9;
+    background-color: #C2C2C2;
+}
+
+#headerID > .toolbarButton {
+    margin-bottom: -3px;
 }

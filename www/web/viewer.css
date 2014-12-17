@@ -547,7 +547,6 @@ html[dir='rtl'] .splitToolbarButton > .toolbarButton {
 .overlayButton {
   border: 0 none;
   background: none;
-  width: 32px;
   height: 25px;
 }
 
@@ -1844,8 +1843,6 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 }
 
 @media all and (max-width: 770px) {
-  #sidebarContainer {
-    top: 32px;
     z-index: 100;
   }
   .loadingInProgress #sidebarContainer {
