@@ -58,3 +58,11 @@
     border: 2px solid;
         
 }
+
+#main {
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    bottom: 0px;
+    top: 74px;
+}

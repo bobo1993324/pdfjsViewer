@@ -15,6 +15,8 @@ $( document ).ready(function() {
         PDFView.renderHighestPriority();
         PDFView.switchSidebarView('thumbs');
         $("#navigation-list").hide(100);
+        
+        $("#main").width(document.body.scrollWidth - $("#sidebarContainer").width());
     });
     $("#close-sidebar-button").click(function() {
         this.classList.toggle('toggled');
@@ -22,5 +24,7 @@ $( document ).ready(function() {
         $("#outerContainer").removeClass('sidebarOpen');
         PDFView.sidebarOpen = false;
         PDFView.renderHighestPriority();
+        
+        $("#main").width(document.body.scrollWidth);
     });
 });
