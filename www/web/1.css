@@ -1,0 +1,35 @@
+[data-role="customIcon"] {
+    height: 40px;
+    padding: 10px
+}
+
+[data-role="customLabel"] {
+    font: 20px "Ubuntu";
+}
+
+#openFile {
+    float: right
+}
+
+#document-title {
+    width: 80%;
+    margin: auto;
+    position: absolute;
+    top: 18px;
+    left: 60px;
+    overflow: hidden;
+    height: 25px
+}
+
+#headerID {
+    position: relative
+}
+
+.toolbarButton:hover {
+    background-color: #DAD7D3;
+}
+
+.toolbarButton:hover:active {
+    background-color: #AEA79F;
+}
+
