@@ -230,7 +230,7 @@ html[dir='rtl'] #outerContainer.sidebarOpen > #mainContainer {
 }
 
 #sidebarContent {
-  top: 32px;
+  top: 0px;
   bottom: 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -270,7 +270,7 @@ html[dir='rtl'] #viewerContainer {
   right: 0;
   z-index: 9999;
   cursor: default;
-  display: none
+  //display: none
 }
 
 #toolbarContainer {
@@ -1839,6 +1839,10 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   }
 }
 
+#sidebarContent {
+  background-color: hsla(0,0%,0%,.5);
+}
+
 @media all and (max-width: 770px) {
   #sidebarContainer {
     top: 32px;
@@ -1846,10 +1850,6 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
   }
   .loadingInProgress #sidebarContainer {
     top: 39px;
-  }
-  #sidebarContent {
-    top: 32px;
-    background-color: hsla(0,0%,0%,.7);
   }
 
   html[dir='ltr'] #outerContainer.sidebarOpen > #mainContainer {

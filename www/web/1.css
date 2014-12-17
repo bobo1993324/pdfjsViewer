@@ -12,7 +12,7 @@
 }
 
 #document-title {
-    width: 80%;
+    width: 70%;
     margin: auto;
     position: absolute;
     top: 18px;
@@ -22,14 +22,39 @@
 }
 
 #headerID {
-    position: relative
+    position: relative;
+    margin-bottom: -1px;
+}
+
+#navigation-list {
+    width: 300px;
+    top: 70px;
+    position: absolute;
+    background-color: #F5F5F5;
+    z-index: 100000;
+    display: none;
 }
 
 .toolbarButton:hover {
-    background-color: #DAD7D3;
+    background-color: #DAD7D3 !important;;
 }
 
 .toolbarButton:hover:active {
     background-color: #AEA79F;
 }
 
+#toolbarSidebar {
+    display: none;   
+}
+
+#close-sidebar-button {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: left;
+    background-color: #EBEBEB;
+    z-index: 1;
+    border-radius: 10px;
+    border: 2px solid;
+        
+}

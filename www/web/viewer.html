@@ -45,28 +45,28 @@ http://sourceforge.net/adobe/cmap/wiki/License/
         Ubuntu provides building blocks that you can use in your application. For more information, you can check out the documentation at http://design.ubuntu.com/apps.
      -->
     <!-- Ubuntu UI Style imports - Ambiance theme -->
-    <link href="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/css/appTemplate.css" rel="stylesheet" type="text/css" />
-
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/fast-buttons.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/core.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/buttons.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/dialogs.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/page.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/pagestacks.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/tab.js"></script>
-    <script src="/usr/share/ubuntu-html5-ui-toolkit/0.1/ambiance/js/tabs.js"></script>
+    <link href="./appTemplate.css" rel="stylesheet" type="text/css" />
 
     <link href="./1.css" rel="stylesheet" type="text/css" />
-      </head>
+    <script src="./jquery-2.1.1.min.js"></script>
+    <script src="./1.js"></script>
+    </head>
 
     <body tabindex="1">
         <div data-role="mainview">
             <header data-role="header" id="headerID">
-                <img id='openFile' class="toolbarButton" data-role="customIcon" src="../images/folder-open-512.png"/>
-                <img data-role="customIcon" src="../images/navigation-menu.svg"/>
+                <img id='openFile' class="toolbarButton" data-role="customIcon" src="./images/folder-open-512.png"/>
+                <img id='navigation-button' data-role="customIcon" class="toolbarButton" src="./images/navigation-menu.svg"/>
                 <p id='document-title' data-role="customLabel">Pdfjs viewer</p>
-           </header>
-           <div data-role="content">
+            </header>
+            <section data-role="list" id="navigation-list">
+              <ul>
+                <li>
+                  <a id="show-thumbnails-button" class="navigation-list-item" href="#">Thumbnails</a>
+                </li>
+              </ul>
+             </section>
+            <div data-role="content">
                 <div data-role="tab" id="main">
                     <div id="viewerContainer" tabindex="0">
                       <div id="viewer"></div>
@@ -91,9 +91,10 @@ http://sourceforge.net/adobe/cmap/wiki/License/
             </button>
           </div>
         </div>
+        
+        <img id="close-sidebar-button" class="toolbarButton" src="./images/close.svg" data-role="customIcon"/>
         <div id="sidebarContent">
-          <div id="thumbnailView">
-          </div>
+            <div id="thumbnailView"></div>
           <div id="outlineView" class="hidden">
           </div>
           <div id="attachmentsView" class="hidden">
