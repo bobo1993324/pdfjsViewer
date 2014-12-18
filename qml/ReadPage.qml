@@ -3,7 +3,7 @@ import Ubuntu.Components 1.1
 import Ubuntu.Web 0.2
 Page {
     property string fileUrl
-    property string webviewUrl: "../www/viewer.html" + fileUrl
+    property string webviewUrl: "../www/web/viewer.html?file=" + fileUrl
     WebView {
         id: webview
         width: parent.width

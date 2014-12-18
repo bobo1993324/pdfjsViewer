@@ -12,7 +12,7 @@
 }
 
 #document-title {
-    width: 70%;
+    width: 300px;
     margin: auto;
     position: absolute;
     top: 18px;
@@ -45,7 +45,7 @@
 }
 
 #toolbarSidebar {
-    display: none;   
+    display: none;
 }
 
 #close-sidebar-button {
@@ -78,4 +78,26 @@
 
 #headerID > .toolbarButton {
     margin-bottom: -3px;
+}
+
+#numPages {
+    float: right;
+    margin-top: 21px;
+    margin-right: 10px;
+}
+
+#pageNumber {
+    margin: 14px;
+    float: right;
+    font: 20px Ubuntu;
+    margin-right: 5px;
+}
+
+#scaleSelectContainer {
+    float: right;
+    margin-right: 10px;
+}
+
+#scaleSelect {
+    padding: 5px;
 }

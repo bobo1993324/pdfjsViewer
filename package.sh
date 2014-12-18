@@ -1,7 +1,6 @@
 #! /bin/bash
-mkdir package/pdf.js/ -p
-cp qml logo.png manifest.json pdfjsViewer.desktop pdfjsViewer.json pdfjsViewer-contenthub.json package -rf
-cp pdf.js/build/ package/pdf.js -rf
+mkdir package
+cp qml logo.png manifest.json pdfjsViewer.desktop pdfjsViewer.json pdfjsViewer-contenthub.json www package -rf
 cd package
 click build .
 cp *.click ..

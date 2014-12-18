@@ -48,4 +48,7 @@ $( document ).ready(function() {
     $("#show-header-button").click(function(){
         showHeader();
     });
+    $(window).resize(function() {
+      $("#scaleSelectContainer").width(document.body.scrollWidth - 300);
+    });
 });

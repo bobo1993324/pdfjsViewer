@@ -56,8 +56,27 @@ http://sourceforge.net/adobe/cmap/wiki/License/
         <div data-role="mainview">
             <header data-role="header" id="headerID">
                 <img id='openFile' class="toolbarButton" data-role="customIcon" src="./images/folder-open-512.png"/>
+                
                 <img id='navigation-button' data-role="customIcon" class="toolbarButton" src="./images/navigation-menu.svg"/>
-                <p id='document-title' data-role="customLabel">Pdfjs viewer</p>
+                <span id="scaleSelectContainer">
+                     <select id="scaleSelect" title="Zoom" tabindex="12" data-l10n-id="zoom" data-role="option-selector">
+                      <option id="pageAutoOption" title="" value="auto" selected="selected" data-l10n-id="page_scale_auto">Automatic Zoom</option>
+                      <option id="pageActualOption" title="" value="page-actual" data-l10n-id="page_scale_actual">Actual Size</option>
+                      <option id="pageFitOption" title="" value="page-fit" data-l10n-id="page_scale_fit">Fit Page</option>
+                      <option id="pageWidthOption" title="" value="page-width" data-l10n-id="page_scale_width">Full Width</option>
+                      <option id="customScaleOption" title="" value="custom"></option>
+                      <option title="" value="0.5">50%</option>
+                      <option title="" value="0.75">75%</option>
+                      <option title="" value="1">100%</option>
+                      <option title="" value="1.25">125%</option>
+                      <option title="" value="1.5">150%</option>
+                      <option title="" value="2">200%</option>
+                      <option title="" value="3">300%</option>
+                      <option title="" value="4">400%</option>
+                    </select>
+                  </span>
+                <span id="numPages" data-role="customLabel"></span>
+                <input type="number" id="pageNumber" class="toolbarField pageNumber" value="1" size="4" min="1" tabindex="9">
             </header>
             <img id='show-header-button' class="toolbarButton" src="./images/go-down.svg"/>
             <section data-role="list" id="navigation-list">

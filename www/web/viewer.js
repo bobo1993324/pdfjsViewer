@@ -3036,7 +3036,6 @@ var PDFView = {
 
   setTitle: function pdfViewSetTitle(title) {
     document.title = title;
-    document.getElementById("document-title").innerHTML = title;
   },
 
   close: function pdfViewClose() {
@@ -3363,8 +3362,8 @@ var PDFView = {
     var pagesCount = pdfDocument.numPages;
 
     var id = pdfDocument.fingerprint;
-    document.getElementById('numPages').textContent =
-      mozL10n.get('page_of', {pageCount: pagesCount}, 'of {{pageCount}}');
+    document.getElementById('numPages').textContent = '/ ' + pagesCount;
+      //~ mozL10n.get('page_of', {pageCount: pagesCount}, '/ {{pageCount}}');
     document.getElementById('pageNumber').max = pagesCount;
 
     PDFView.documentFingerprint = id;
@@ -5767,10 +5766,12 @@ window.addEventListener('localized', function localized(evt) {
       var select = document.getElementById('scaleSelect');
       select.setAttribute('style', 'min-width: inherit;');
       var width = select.clientWidth + SCALE_SELECT_CONTAINER_PADDING;
-      select.setAttribute('style', 'min-width: ' +
-                                   (width + SCALE_SELECT_PADDING) + 'px;');
-      container.setAttribute('style', 'min-width: ' + width + 'px; ' +
+      //~ select.setAttribute('style', 'min-width: ' +
+                                   //~ (width + SCALE_SELECT_PADDING) + 'px;');
+      container.setAttribute('style', //'min-width: ' + width + 'px; ' +
                                       'max-width: ' + width + 'px;');
+      var event = new Event('resize');
+      window.dispatchEvent(event);
     }
 
     // Set the 'max-height' CSS property of the secondary toolbar.
