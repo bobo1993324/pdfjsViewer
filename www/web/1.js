@@ -51,4 +51,18 @@ $( document ).ready(function() {
     $(window).resize(function() {
       $("#scaleSelectContainer").width(document.body.scrollWidth - 300);
     });
+
+    //pinch resize
+    var viewerElement = document.getElementById('viewer');
+    var mc = new Hammer.Manager(viewerElement, {touchAction: 'auto'});
+    var pinch = new Hammer.Pinch();
+    // add to the Manager
+    mc.add([pinch]);
+    mc.on("pinchend", function(ev) {
+        if (ev.scale > 1.5) {
+            PDFView.zoomIn(Math.floor((ev.scale - 1.0) / 0.5));
+        } else if (ev.scale < 0.8) {
+            PDFView.zoomOut(Math.floor((1.0 - ev.scale) / 0.2));
+        }
+    });
 });
