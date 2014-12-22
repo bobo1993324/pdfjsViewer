@@ -24,7 +24,7 @@
 
 'use strict';
 
-var DEFAULT_URL = 'compressed.tracemonkey-pldi-09.pdf';
+var DEFAULT_URL = '';
 var DEFAULT_SCALE = 'auto';
 var DEFAULT_SCALE_DELTA = 1.1;
 var UNKNOWN_SCALE = 0;
@@ -3315,6 +3315,9 @@ var PDFView = {
     moreInfoButton.removeAttribute('hidden');
     lessInfoButton.setAttribute('hidden', 'true');
     errorMoreInfo.value = moreInfoText;
+    
+    document.getElementById("headerID").style.top = "0";
+    hideControls();
   },
 
   progress: function pdfViewProgress(level) {
@@ -5600,7 +5603,26 @@ function webViewerInitialized() {
 
   if (file) {
     PDFView.open(file, 0);
+    document.getElementById("headerID").style.top = "-64px";
+  } else {
+    hideControls();
   }
+}
+
+function showControls() {
+    var hideOnEmptyDocuments = document.getElementsByClassName("hideOnEmptyDocument");
+    for (var i in hideOnEmptyDocuments) {
+        if (hideOnEmptyDocuments[i].style)
+            hideOnEmptyDocuments[i].style.visibility = "";
+    }
+}
+
+function hideControls() {
+    var hideOnEmptyDocuments = document.getElementsByClassName("hideOnEmptyDocument");
+    for (var i in hideOnEmptyDocuments) {
+        if (hideOnEmptyDocuments[i].style)
+            hideOnEmptyDocuments[i].style.visibility = "hidden";
+    }
 }
 
 document.addEventListener('DOMContentLoaded', webViewerLoad, true);
@@ -5737,6 +5759,9 @@ window.addEventListener('change', function webViewerChange(evt) {
     setAttribute('hidden', 'true');
   document.getElementById('download').setAttribute('hidden', 'true');
   document.getElementById('secondaryDownload').setAttribute('hidden', 'true');
+  
+  document.getElementById("headerID").style.top = "-64px";
+  showControls();
 }, true);
 
 function selectScaleOption(value) {
@@ -5768,8 +5793,9 @@ window.addEventListener('localized', function localized(evt) {
       var width = select.clientWidth + SCALE_SELECT_CONTAINER_PADDING;
       //~ select.setAttribute('style', 'min-width: ' +
                                    //~ (width + SCALE_SELECT_PADDING) + 'px;');
-      container.setAttribute('style', //'min-width: ' + width + 'px; ' +
-                                      'max-width: ' + width + 'px;');
+      //~ container.setAttribute('style', 'min-width: ' + width + 'px; ' +
+                                      //~ 'max-width: ' + width + 'px;');
+      container.style.maxWidth = width + "px";
       var event = new Event('resize');
       window.dispatchEvent(event);
     }

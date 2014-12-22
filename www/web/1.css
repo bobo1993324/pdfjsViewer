@@ -82,12 +82,13 @@
 
 #numPages {
     float: right;
-    margin-top: 21px;
+    margin-top: 19px;
     margin-right: 10px;
 }
 
 #pageNumber {
     margin: 14px;
+    margin-top: 12px;
     float: right;
     font: 20px Ubuntu;
     margin-right: 5px;
