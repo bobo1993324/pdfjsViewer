@@ -25,6 +25,7 @@
     position: relative;
     margin-bottom: -1px;
     z-index: 10;
+    top: 0px
 }
 
 #navigation-list {
@@ -68,15 +69,8 @@
     top: 0px;
 }
 
-#show-header-button {
-    top: 10px;
-}
-
-#hide-header-button {
+#toggle-header-button {
     top: 74px;
-}
-
-.showhide-header-button {
     z-index: 9;
     background-color: #C2C2C2;
     position: absolute;
