@@ -26,6 +26,10 @@ import Ubuntu.Components.ListItems 0.1 as ListItem
 Popover {
     id: popover
     property var popupModel: model
+    Rectangle {
+        anchors.fill: parent
+        color: Theme.palette.normal.base
+    }
     Column {
         anchors {
             left: parent.left
@@ -46,12 +50,6 @@ Popover {
                     popupModel.items.select(index)
                     popupModel.accept();
                 }
-
-//                property string group: model.group
-//                property int index: model.index
-//                property bool enabled: model.enabled
-//                property bool selected: model.selected
-//                property bool isSeparator: model.isSeparator
             }
         }
     }
