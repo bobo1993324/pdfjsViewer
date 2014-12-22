@@ -8,7 +8,7 @@ var PDFJSViewerUI = {
         PDFView.sidebarOpen = false;
         PDFView.renderHighestPriority();
         
-        $("#main").width(document.body.scrollWidth);
+        $("#main").width(window.innerWidth);
     },
     toggleHeader: function() {
         if (this.isHeaderShown()) {
@@ -39,8 +39,6 @@ var PDFJSViewerUI = {
 } 
 
 $( document ).ready(function() {
-    
-    $("#sidebarContainer").height(document.body.scrollHeight - 75);
     $("#navigation-button").click(function() {
         $("#outerContainer").addClass('sidebarMoving');
         $("#outerContainer").addClass('sidebarOpen');
@@ -49,8 +47,8 @@ $( document ).ready(function() {
         PDFView.switchSidebarView('thumbs');
         $("#navigation-list").hide(100);
         
-        $("#main").width(document.body.scrollWidth - $("#sidebarContainer").width() + 4);
-        $("#sidebarContainer").height(document.body.scrollHeight - $("#headerID").height());
+        $("#main").width(window.innerWidth - $("#sidebarContainer").width() + 4);
+        $("#sidebarContainer").height(document.body.innerHeight - $("#headerID").height());
     });
     $("#close-sidebar-button").click(function() {
         PDFJSViewerUI.closeThumbView();
@@ -62,7 +60,10 @@ $( document ).ready(function() {
         PDFJSViewerUI.toggleHeader();
     });
     $(window).resize(function() {
-      $("#scaleSelectContainer").width(document.body.scrollWidth - 300);
+      $("#scaleSelectContainer").width(document.body.innerWidth - 300);
+      PDFJSViewerUI.hideHeader();
+      $("#main").width(window.innerWidth);
+      //$("#sidebarContainer").height(document.body.innerHeight - $("#headerID").height());
     });
 
     //pinch resize
