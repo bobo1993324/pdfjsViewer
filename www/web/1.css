@@ -4,7 +4,7 @@
 }
 
 [data-role="customLabel"] {
-    font: 20px "Ubuntu";
+    font: 16px "Ubuntu";
 }
 
 #openFile {
@@ -84,15 +84,15 @@
 
 #numPages {
     float: right;
-    margin-top: 19px;
+    margin-top: 22px;
     margin-right: 10px;
 }
 
 #pageNumber {
     margin: 14px;
-    margin-top: 12px;
+    margin-top: 15px;
     float: right;
-    font: 20px Ubuntu;
+    font: 16px Ubuntu;
     margin-right: 5px;
 }
 

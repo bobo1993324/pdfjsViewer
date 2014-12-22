@@ -30,6 +30,7 @@ var PDFJSViewerUI = {
     },
     hideHeader: function() {
         PDFJSViewerUI.closeThumbView();
+        document.getElementById('pageNumber').blur();
         $("#headerID").animate({
             top: '-=64px'
         }, 100);
