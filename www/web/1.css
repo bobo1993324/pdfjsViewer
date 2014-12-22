@@ -69,11 +69,19 @@
 }
 
 #show-header-button {
-   position: absolute;
-    right: 10px;
     top: 10px;
+}
+
+#hide-header-button {
+    top: 74px;
+}
+
+.showhide-header-button {
     z-index: 9;
     background-color: #C2C2C2;
+    position: absolute;
+    right: 10px;
+
 }
 
 #headerID > .toolbarButton {

@@ -5603,7 +5603,7 @@ function webViewerInitialized() {
 
   if (file) {
     PDFView.open(file, 0);
-    document.getElementById("headerID").style.top = "-64px";
+    PDFJSViewerUI.hideHeader();
   } else {
     hideControls();
   }
@@ -5760,7 +5760,7 @@ window.addEventListener('change', function webViewerChange(evt) {
   document.getElementById('download').setAttribute('hidden', 'true');
   document.getElementById('secondaryDownload').setAttribute('hidden', 'true');
   
-  document.getElementById("headerID").style.top = "-64px";
+  PDFJSViewerUI.hideHeader();
   showControls();
 }, true);
 

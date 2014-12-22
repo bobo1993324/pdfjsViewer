@@ -1,18 +1,45 @@
-$( document ).ready(function() {
-    function closeThumbView() {
+var PDFJSViewerUI = {
+    isHeaderShown: function() {
+        return $("#headerID").css('top').split("px")[0] > -30;
+    },
+    closeThumbView: function() {
         $("#outerContainer").addClass('sidebarMoving');
         $("#outerContainer").removeClass('sidebarOpen');
         PDFView.sidebarOpen = false;
         PDFView.renderHighestPriority();
         
         $("#main").width(document.body.scrollWidth);
-    }
-    
-    function showHeader() {
+    },
+    toggleHeader: function() {
+        if (this.isHeaderShown()) {
+            this.hideHeader();
+        } else {
+            this.showHeader();
+        }
+    },
+    showHeader: function() {
         $("#headerID").animate({
             top: '+=64px'
         }, 100);
+        $("#toggle-header-button").animate({
+            top: '+=64px'
+        }, 100);
+        $("#toggle-header-button").attr("src", "./images/go-up.svg");
+    },
+    hideHeader: function() {
+        PDFJSViewerUI.closeThumbView();
+        $("#headerID").animate({
+            top: '-=64px'
+        }, 100);
+        $("#toggle-header-button").animate({
+            top: '-=64px'
+        }, 100);
+        $("#toggle-header-button").attr("src", "./images/go-down.svg");
     }
+} 
+
+$( document ).ready(function() {
+    
     $("#sidebarContainer").height(document.body.scrollHeight - 75);
     $("#navigation-button").click(function() {
         $("#outerContainer").addClass('sidebarMoving');
@@ -26,20 +53,13 @@ $( document ).ready(function() {
         $("#sidebarContainer").height(document.body.scrollHeight - $("#headerID").height());
     });
     $("#close-sidebar-button").click(function() {
-        closeThumbView();
+        PDFJSViewerUI.closeThumbView();
     });
     $("#main").click(function(){
-        if ($("#headerID").css('top').split("px")[0] < -30) {
-            showHeader();
-        } else {
-            closeThumbView();
-            $("#headerID").animate({
-                top: '-=64px'
-            }, 100);
-        }
+        PDFJSViewerUI.toggleHeader();
     });
-    $("#show-header-button").click(function(){
-        showHeader();
+    $("#toggle-header-button").click(function(){
+        PDFJSViewerUI.toggleHeader();
     });
     $(window).resize(function() {
       $("#scaleSelectContainer").width(document.body.scrollWidth - 300);
