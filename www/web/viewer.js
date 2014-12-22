@@ -5581,6 +5581,7 @@ function webViewerInitialized() {
       if (this.value !== (this.value | 0).toString()) {
         this.value = PDFView.page;
       }
+      document.getElementById('pageNumber').blur();
     });
 
   document.getElementById('scaleSelect').addEventListener('change',
