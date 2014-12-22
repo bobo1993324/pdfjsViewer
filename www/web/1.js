@@ -23,6 +23,7 @@ $( document ).ready(function() {
         $("#navigation-list").hide(100);
         
         $("#main").width(document.body.scrollWidth - $("#sidebarContainer").width() + 4);
+        $("#sidebarContainer").height(document.body.scrollHeight - $("#headerID").height());
     });
     $("#close-sidebar-button").click(function() {
         closeThumbView();
