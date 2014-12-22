@@ -3,13 +3,14 @@ var PDFJSViewerUI = {
         return $("#headerID").css('top').split("px")[0] > -30;
     },
     closeThumbView: function() {
-        $("#outerContainer").addClass('sidebarMoving');
-        $("#outerContainer").removeClass('sidebarOpen');
-        PDFView.sidebarOpen = false;
-        PDFView.renderHighestPriority();
-        
-        $("#main").width(window.innerWidth);
-    },
+        if (PDFView.sidebarOpen) {
+            $("#outerContainer").addClass('sidebarMoving');
+            $("#outerContainer").removeClass('sidebarOpen');
+            PDFView.sidebarOpen = false;
+            PDFView.renderHighestPriority();
+            
+            $("#main").width(document.body.scrollWidth);
+	},
     toggleHeader: function() {
         if (this.isHeaderShown()) {
             this.hideHeader();
