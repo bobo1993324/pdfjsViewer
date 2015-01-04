@@ -4931,6 +4931,8 @@ var ThumbnailView = function thumbnailView(container, id, defaultViewport) {
   }
 
   this.setImage = function thumbnailViewSetImage(img) {
+    //disable setImage, it doesn't work on the pad
+    return;
     if (!this.pdfPage) {
       var promise = PDFView.getPage(this.id);
       promise.then(function(pdfPage) {
