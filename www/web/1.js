@@ -63,7 +63,7 @@ $( document ).ready(function() {
         PDFJSViewerUI.toggleHeader();
     });
     $(window).resize(function() {
-      $("#scaleSelectContainer").width(window.innerWidth - 300);
+      $("#scaleSelectContainer").width(window.innerWidth - 250);
       PDFJSViewerUI.closeThumbView();
       $("#main").width(window.innerWidth);
       $("#sidebarContainer").height(window.innerHeight - $("#headerID").height());
